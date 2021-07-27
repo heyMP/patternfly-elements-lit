@@ -9,6 +9,7 @@ esbuild.build({
     "elements/pfe-card/src/pfe-card.ts",
     "elements/pfe-badge/src/pfe-badge.ts",
     "elements/pfe-button/src/pfe-button.ts",
+    "elements/pfe-clipboard/src/pfe-clipboard.ts",
     "elements/pfelement/src/pfelement.ts",
   ],
   entryNames: "[dir]/../dist/[name]",
