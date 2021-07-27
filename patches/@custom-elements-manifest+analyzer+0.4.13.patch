@@ -1,0 +1,44 @@
+diff --git a/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/class-jsdoc.js b/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/class-jsdoc.js
+index 8f67cbc..98f83ed 100644
+--- a/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/class-jsdoc.js
++++ b/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/class-jsdoc.js
+@@ -1,4 +1,4 @@
+-import parse from 'comment-parser';
++import { parse } from 'comment-parser';
+ import { handleJsDocType, normalizeDescription } from '../../utils/jsdoc.js';
+ import { safe } from '../../utils/index.js';
+ 
+@@ -25,7 +25,7 @@ export function classJsDocPlugin() {
+            * Checks to see if the item is already in the classDoc, and if so merge and overwrite (JSDoc takes precedence)
+            */
+           node?.jsDoc?.forEach(jsDoc => {
+-            const parsed = parse.parse(jsDoc?.getFullText());
++            const parsed = parse(jsDoc?.getFullText());
+             parsed?.forEach(parsedJsDoc => {
+ 
+               /**
+diff --git a/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/creators/handlers.js b/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/creators/handlers.js
+index 21ca2ca..ee75cc9 100644
+--- a/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/creators/handlers.js
++++ b/node_modules/@custom-elements-manifest/analyzer/src/features/analyse-phase/creators/handlers.js
+@@ -1,9 +1,9 @@
+ import ts from 'typescript';
+-import parse from 'comment-parser';
++import { parse } from 'comment-parser';
+ 
+ import { has, resolveModuleOrPackageSpecifier, safe } from '../../../utils/index.js';
+ import { handleJsDocType, normalizeDescription } from '../../../utils/jsdoc.js';
+-import { isPrimitive, isWellKnownType } from '../../../utils/ast-helpers.js';
++import { isWellKnownType } from '../../../utils/ast-helpers.js';
+ 
+ /**
+  * @example static foo;
+@@ -197,7 +197,7 @@ export function handleHeritage(classTemplate, moduleDoc, context, node) {
+  */
+ export function handleAttrJsDoc(node, doc) {
+   node?.jsDoc?.forEach(jsDoc => {
+-    const docs = parse.parse(jsDoc?.getFullText())?.find(doc => doc?.tags?.some(({tag}) => tag === 'attr'));
++    const docs = parse(jsDoc?.getFullText())?.find(doc => doc?.tags?.some(({tag}) => tag === 'attr'));
+     const attrTag = docs?.tags?.find(({tag}) => tag === 'attr');
+ 
+     if(attrTag?.name) {
