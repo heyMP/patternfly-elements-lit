@@ -22,7 +22,7 @@ export class PfeClipboard extends PFElement {
 
   static get properties() {
     return {
-      noIcon: {type: Boolean},
+      noIcon: {type: Boolean, attr: 'no-icon'},
       copiedDuration: {type: Number},
       role: {type: String},
       tabindex: {type: Number},

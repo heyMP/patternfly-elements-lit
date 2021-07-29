@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "dist/pfe-clipboard.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PfeClipboard",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "events",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "_clickHandler",
+              "parameters": [
+                {
+                  "name": "event"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_formattedCopiedTimeout"
+            },
+            {
+              "kind": "method",
+              "name": "_keydownHandler",
+              "parameters": [
+                {
+                  "name": "event"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "copyURLToClipboard"
+            },
+            {
+              "kind": "field",
+              "name": "noIcon",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "noIcon"
+            },
+            {
+              "kind": "field",
+              "name": "copiedDuration",
+              "type": {
+                "text": "number"
+              },
+              "default": "3",
+              "privacy": "public",
+              "attribute": "copiedDuration"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"button\"",
+              "privacy": "public",
+              "attribute": "role"
+            },
+            {
+              "kind": "field",
+              "name": "tabindex",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "privacy": "public",
+              "attribute": "tabindex"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "noIcon",
+              "fieldName": "noIcon"
+            },
+            {
+              "name": "copiedDuration",
+              "fieldName": "copiedDuration"
+            },
+            {
+              "name": "role",
+              "fieldName": "role"
+            },
+            {
+              "name": "tabindex",
+              "fieldName": "tabindex"
+            }
+          ],
+          "superclass": {
+            "name": "PFElement",
+            "package": "@patternfly/pfelement"
+          },
+          "tagName": "pfe-clipboard",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "pfe-clipboard",
+          "declaration": {
+            "name": "PfeClipboard",
+            "module": "dist/pfe-clipboard.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "PfeClipboard",
+          "declaration": {
+            "name": "PfeClipboard",
+            "module": "dist/pfe-clipboard.js"
+          }
+        }
+      ]
+    }
+  ]
+}
