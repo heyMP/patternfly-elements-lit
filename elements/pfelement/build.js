@@ -1,4 +1,4 @@
-import build from "../../scripts/build.js";
+import {build} from "../../scripts/build.js";
 
 build({
   entryPoints: ["src/pfelement.ts"],
